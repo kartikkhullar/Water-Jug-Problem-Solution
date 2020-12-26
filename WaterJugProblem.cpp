@@ -43,11 +43,13 @@ node* WaterJug(int Jug1, int Jug2, int target)
 		/* Target volume found in Jug */
 		if (curr.first == target || curr.second == target) {
 			solvable = true;
-			if (curr.first == target && curr.second != 0)
-			    { INIT(curr.first, 0) }
-			else if (curr.second == target && curr.first != 0) 
-			    { INIT(0, curr.second) }
-			upper = curr_node;
+			if (curr.first == target && curr.second != 0){ 
+			    INIT(curr.first, 0)
+				upper = curr_node;
+			} else if (curr.second == target && curr.first != 0) {
+			    INIT(0, curr.second)
+			    upper = curr_node;
+			}
 			break;
 		}
 		
